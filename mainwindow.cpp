@@ -34,6 +34,7 @@ MainWindow::MainWindow(QWidget *parent)
         customer[2].password = "password2";
 
         ui->stackedWidget->setCurrentIndex(0);
+
 }
 
 MainWindow::~MainWindow()
@@ -123,6 +124,23 @@ void MainWindow::on_pushButton_insert_clicked()
         if(customer[customer_nr].active == 1) break;
     }
 
+    int detector = 0;
+    try{
+        string input = (ui->lineEdit_InsertAmount->text()).toStdString();
+        for(char sign: input)
+        {
+            if(sign != '0' && sign != '1' && sign != '2' && sign != '3' && sign != '4' && sign != '5' && sign != '6' && sign != '7'
+                    && sign != '8' && sign != '9' && sign != '.') throw 'a';
+        }
+    }
+    catch (char x)
+    {
+        ui->textBrowser_confirmationMoney->setText("The input isn't a number. Please, redefine it!");
+        detector = 1;
+    }
+
+    if(detector == 0)
+    {
     if(ui->pushButton_insert->text() == "Insert"){                              //if we are inserting money
     customer[customer_nr] + stof(ui->lineEdit_InsertAmount->text().toStdString());      //converting qstring to string and then to float
     ui->textBrowser_confirmationMoney->setText(ui->lineEdit_InsertAmount->text() + "zł was successfully added to your account");
@@ -160,8 +178,8 @@ if(ui->pushButton_insert->text() == "Take out")                         //when u
 
 }
 
-ui->textBrowser_currentBalance->setText("Current bank balance: " + QString::number(customer[customer_nr].bank_balance) + "\nCurrent loan balance: " + QString::number(customer[customer_nr].loanOwe));          //showing the current bank balance of the user
-
+    ui->textBrowser_currentBalance->setText("Current bank balance: " + QString::number(customer[customer_nr].bank_balance) + "\nCurrent loan balance: " + QString::number(customer[customer_nr].loanOwe));          //showing the current bank balance of the user
+    }
 }
 
 
@@ -216,7 +234,7 @@ void MainWindow::on_pushButton_insertNewData_clicked()
     ui->lineEdit_restatePassword->show();
     ui->pushButton_restate->show();
 
-    ui->textBrowser_RepeatPassword->setText("Please confirm your passwordf by restating it");
+    ui->textBrowser_RepeatPassword->setText("Please confirm your password by restating it");
 
 
 }
@@ -243,19 +261,18 @@ void MainWindow::on_pushButton_restate_clicked()
     if(newPassword == tempNewPassword)              //everything is correct, creating new account
     {
         int customer_nr = 0;
-        int detector = 0;
+       // int detector = 0;
         for(customer_nr = 0; customer_nr<N; customer_nr++)                 //to check if there is an empty slot for a new customer and if there is - assing all of the data to it
         {
             if(customer[customer_nr].name == "0") break;
-            if(customer[customer_nr].name != "0") detector++;
+           // if(customer[customer_nr].name != "0") detector++;
         }
-
-        try {
+/*       try {
             if(detector == N) throw 'a';
         } catch (char a) {
             ui->textBrowser_RepeatPassword->setText("Exception caught: No more new accounts can be created");
         }
-
+*/
         customer[customer_nr].name = newName;
         customer[customer_nr].surname = newSurname;
         customer[customer_nr].login = newLogin;
@@ -275,6 +292,22 @@ void MainWindow::on_pushButton_restate_clicked()
 
 void MainWindow::on_pushButton_BackToMainMenuFromNewAccount_clicked()               //coming back to the main menu from the "new account" page
 {
+
+    int detector = 0;
+    for(int i = 0; i<N; i++)                 //to check if there is an empty slot for a new customer
+    {
+
+        if(customer[i].name != "0") detector++;
+    }
+
+    try {
+        if(detector == N) throw 'a';
+    } catch (char a) {
+        ui->textBrowser_Announcement->setText("Exception caught: No more new accounts can be created");
+        ui->pushButton_newAccount->hide();
+    }
+
     ui->stackedWidget->setCurrentIndex(0);
+
 }
 
