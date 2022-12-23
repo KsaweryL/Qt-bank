@@ -57,6 +57,8 @@ private slots:
 
     void on_pushButton_BackToMainMenuFromNewAccount_clicked();
 
+    void on_pushButton_GiveBackMoney_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -178,6 +178,19 @@ if(ui->pushButton_insert->text() == "Take out")                         //when u
 
 }
 
+    if(ui->pushButton_insert->text() == "Give back")                         //when user gives back money he/she took out earlier for a loan
+    {
+        int customer_nr = 0;
+        for(customer_nr = 0; customer_nr<N; customer_nr++)                 //to check which customer is currently active
+        {
+            if(customer[customer_nr].active == 1) break;
+        }
+
+        customer[customer_nr].GivingBackLoanMoney(stof(ui->lineEdit_InsertAmount->text().toStdString()));
+
+         ui->textBrowser_confirmationMoney->setText(ui->lineEdit_InsertAmount->text() + "zł was successfully given back");         //confirmation
+    }
+
     ui->textBrowser_currentBalance->setText("Current bank balance: " + QString::number(customer[customer_nr].bank_balance) + "\nCurrent loan balance: " + QString::number(customer[customer_nr].loanOwe));          //showing the current bank balance of the user
     }
 }
@@ -261,18 +274,13 @@ void MainWindow::on_pushButton_restate_clicked()
     if(newPassword == tempNewPassword)              //everything is correct, creating new account
     {
         int customer_nr = 0;
-       // int detector = 0;
+
         for(customer_nr = 0; customer_nr<N; customer_nr++)                 //to check if there is an empty slot for a new customer and if there is - assing all of the data to it
         {
             if(customer[customer_nr].name == "0") break;
-           // if(customer[customer_nr].name != "0") detector++;
+
         }
-/*       try {
-            if(detector == N) throw 'a';
-        } catch (char a) {
-            ui->textBrowser_RepeatPassword->setText("Exception caught: No more new accounts can be created");
-        }
-*/
+
         customer[customer_nr].name = newName;
         customer[customer_nr].surname = newSurname;
         customer[customer_nr].login = newLogin;
@@ -308,6 +316,15 @@ void MainWindow::on_pushButton_BackToMainMenuFromNewAccount_clicked()           
     }
 
     ui->stackedWidget->setCurrentIndex(0);
+
+}
+
+
+void MainWindow::on_pushButton_GiveBackMoney_clicked()
+{
+    ui->textBrowser_MoneyGeneral->setText("                             How much money would you like to give back?");
+    ui->pushButton_insert->setText("Give back");
+     ui->stackedWidget->setCurrentIndex(4);
 
 }
 
