@@ -38,6 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
         ui->lineEdit_TransferToPerson_Name->hide();      //hiding the the transfer option in the beginning
          ui->lineEdit_TransferToPerson_Surname->hide();
 
+        ui->pushButton_BanningTheUser->hide();              //hiding the possibility to ban the user in the beginning
 }
 
 MainWindow::~MainWindow()
@@ -77,6 +78,8 @@ void MainWindow::on_pushButton_3_clicked()
                     ui->pushButton_GiveBackMoney->hide();
                     ui->textBrowser_currentBalance->setText("Your acccount is temporarily banned! All of the options are blocked. \nCurrent bank balance: " + QString::number(customer[i].bank_balance) + "\nCurrent loan balance: " + QString::number(customer[i].loanOwe));
                 }
+
+                if(customer[i].login == admin.login) ui->pushButton_BanningTheUser->show();             //if admin is detected, enable the ability to ban the users
                 ui->stackedWidget->setCurrentIndex(3);
 
             }
@@ -277,7 +280,7 @@ void MainWindow::on_pushButton_ComeBackMainMenu_clicked()
          customer[i].active = 0;
      }
 
-
+    ui->pushButton_BanningTheUser->hide();          //hide the admin options when coming back to main menu
 }
 
 
