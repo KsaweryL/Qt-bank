@@ -59,6 +59,10 @@ private slots:
 
     void on_pushButton_GiveBackMoney_clicked();
 
+    void on_pushButton_TransferMoney_clicked();
+
+    void on_pushButton_BanningTheUser_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

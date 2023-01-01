@@ -20,6 +20,8 @@ public:
         //user[0].login = login;
     }
 
+    void Banning(Customer client);
+
 };
 
 #endif // ADMIN_H
