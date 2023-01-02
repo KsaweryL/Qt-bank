@@ -63,9 +63,11 @@ private slots:
 
     void on_pushButton_BanningTheUser_clicked();
 
-    void on_pushButton_clicked();
-
     void on_pushButton_comeBackBan_clicked();
+
+    void on_pushButton_UnbanningTheUser_clicked();
+
+    void on_pushButton_Ban_clicked();
 
 private:
     Ui::MainWindow *ui;

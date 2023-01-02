@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page_0">
      <widget class="QPushButton" name="pushButton_login">
@@ -435,6 +435,19 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <string>Ban a user</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton_UnbanningTheUser">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>320</y>
+        <width>161</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Unban a user</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_4">
      <widget class="QTextBrowser" name="textBrowser_MoneyGeneral">
@@ -570,19 +583,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <string>Type in the user's surname</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>230</y>
-        <width>131</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Ban</string>
-      </property>
-     </widget>
      <widget class="QTextBrowser" name="textBrowser_BanUserInfo">
       <property name="geometry">
        <rect>
@@ -604,6 +604,19 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </property>
       <property name="text">
        <string>Come back</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Ban">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>230</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ban</string>
       </property>
      </widget>
     </widget>

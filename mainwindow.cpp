@@ -39,6 +39,7 @@ MainWindow::MainWindow(QWidget *parent)
          ui->lineEdit_TransferToPerson_Surname->hide();
 
         ui->pushButton_BanningTheUser->hide();              //hiding the possibility to ban the user in the beginning
+        ui->pushButton_UnbanningTheUser->hide();              //hiding the possibility to unban the user in the beginning
 }
 
 MainWindow::~MainWindow()
@@ -87,7 +88,7 @@ void MainWindow::on_pushButton_3_clicked()
                     ui->pushButton_GiveBackMoney->show();
                 }
 
-                if(customer[i].login == admin.login) ui->pushButton_BanningTheUser->show();             //if admin is detected, enable the ability to ban and unban the users
+                if(customer[i].login == admin.login) {ui->pushButton_BanningTheUser->show();  ui->pushButton_UnbanningTheUser->show();}            //if admin is detected, enable the ability to ban and unban the users
                 ui->stackedWidget->setCurrentIndex(3);
 
             }
@@ -290,6 +291,8 @@ void MainWindow::on_pushButton_ComeBackMainMenu_clicked()
      }
 
     ui->pushButton_BanningTheUser->hide();          //hide the admin options when coming back to main menu
+    ui->pushButton_UnbanningTheUser->hide();
+
 }
 
 
@@ -403,7 +406,7 @@ void MainWindow::on_pushButton_BanningTheUser_clicked()
 }
 
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_pushButton_Ban_clicked()
 {
     string input_name = ui->lineEdit_enterUserNameBan->text().toStdString();
     string input_surname = ui->lineEdit_enterUserSurnameBan->text().toStdString();
@@ -423,8 +426,15 @@ void MainWindow::on_pushButton_clicked()
 
     if(customer_int != N)               //the user exists
     {
+        if(ui->pushButton_Ban->text() == "Ban"){
         customer[customer_int].ban_status = 1;          //banning the user
         ui->textBrowser_BanUserInfo->setText("The user named " + QString::fromStdString(customer[customer_int].name) +" "+ QString::fromStdString(customer[customer_int].surname) + " was successfully banned");
+        }
+
+         if(ui->pushButton_Ban->text() == "Unban"){
+             customer[customer_int].ban_status = 0;          //unbanning the user
+             ui->textBrowser_BanUserInfo->setText("The user named " + QString::fromStdString(customer[customer_int].name) +" "+ QString::fromStdString(customer[customer_int].surname) + " was successfully unbanned");
+         }
     }
 }
 
@@ -434,5 +444,13 @@ void MainWindow::on_pushButton_comeBackBan_clicked()
     ui->lineEdit_enterUserNameBan->setText("");             //resetting the input
     ui->lineEdit_enterUserSurnameBan->setText("");
     ui->stackedWidget->setCurrentIndex(3);
+}
+
+
+void MainWindow::on_pushButton_UnbanningTheUser_clicked()
+{
+    ui->lineEdit_InsertAmount->setPlaceholderText("Which user would you like to unban?");
+    ui->pushButton_Ban->setText("Unban");
+     ui->stackedWidget->setCurrentIndex(5);
 }
 
