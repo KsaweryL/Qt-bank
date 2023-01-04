@@ -12,7 +12,8 @@ SOURCES += \
     admin.cpp \
     customer.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    mainwindow_2.cpp
 
 HEADERS += \
     admin.h \

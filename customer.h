@@ -26,6 +26,8 @@ public:
         loanOwe = 0;
         ban_status = 0;
         active = 0;
+
+
     }
 
     void operator + (float money)						//overloading operator + (for inserting money)
@@ -58,6 +60,9 @@ public:
         loanOwe = loanOwe - money;
         bank_balance = bank_balance - money;
     }
+
+    void FileInput(Customer customer[], int nrUsers);          //performing a write operation into the file
+    void FileOutput(Customer customer[], int nrUsers);          //getting data from the file
 
     virtual void F_RTTI(){};
 
