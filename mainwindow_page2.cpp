@@ -54,3 +54,14 @@ void MainWindow::on_pushButton_3_clicked()
     ui->textBrowser_incorrectLogin->setText("Either login or password is incorrect.");
 
 }
+
+void MainWindow::on_pushButton_comeBack_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+
+    for(int i = 0; i<N; i++)                 //resetting the active status for all users when coming back to main menu
+    {
+        customer[i].active = 0;
+    }
+
+}

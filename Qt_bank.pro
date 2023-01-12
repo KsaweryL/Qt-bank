@@ -18,7 +18,8 @@ SOURCES += \
     mainwindow_page2.cpp \
     mainwindow_page3.cpp \
     mainwindow_page4.cpp \
-    mainwindow_page5.cpp
+    mainwindow_page5.cpp \
+    mainwindow_page6.cpp
 
 HEADERS += \
     admin.h \

@@ -69,6 +69,10 @@ private slots:
 
     void on_pushButton_Ban_clicked();
 
+    void on_pushButton_MoreOptions_clicked();
+
+    void on_pushButton_ComeBack_ListOfUsers_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
