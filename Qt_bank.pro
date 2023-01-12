@@ -13,7 +13,13 @@ SOURCES += \
     customer.cpp \
     main.cpp \
     mainwindow.cpp \
-    mainwindow_2.cpp
+    mainwindow_2.cpp \
+    mainwindow_page0.cpp \
+    mainwindow_page1.cpp \
+    mainwindow_page2.cpp \
+    mainwindow_page3.cpp \
+    mainwindow_page4.cpp \
+    mainwindow_page5.cpp
 
 HEADERS += \
     admin.h \
