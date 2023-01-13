@@ -23,6 +23,7 @@ void MainWindow::on_pushButton_ComeBackMainMenu_clicked()
 
     ui->pushButton_BanningTheUser->hide();          //hide the admin options when coming back to main menu
     ui->pushButton_UnbanningTheUser->hide();
+    ui->pushButton_MoreOptions->hide();
 
 }
 

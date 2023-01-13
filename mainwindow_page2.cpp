@@ -43,7 +43,10 @@ void MainWindow::on_pushButton_3_clicked()
                     ui->pushButton_GiveBackMoney->show();
                 }
 
-                if(customer[i].login == admin.login) {ui->pushButton_BanningTheUser->show();  ui->pushButton_UnbanningTheUser->show();}            //if admin is detected, enable the ability to ban and unban the users
+                if(customer[i].login == admin.login) {ui->pushButton_BanningTheUser->show();   //if admin is detected, show "more options" button
+                    ui->pushButton_UnbanningTheUser->show();
+                ui->pushButton_MoreOptions->show();
+                }
                 ui->stackedWidget->setCurrentIndex(3);
 
             }

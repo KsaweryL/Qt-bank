@@ -41,6 +41,8 @@ MainWindow::MainWindow(QWidget *parent)
         ui->pushButton_BanningTheUser->hide();              //hiding the possibility to ban the user in the beginning
         ui->pushButton_UnbanningTheUser->hide();              //hiding the possibility to unban the user in the beginning
 
+        ui->pushButton_MoreOptions->hide();                 //hiding the possibility to access more options in the beginning
+
         admin.FileOutput(customer,N);
 
 
