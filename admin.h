@@ -9,11 +9,6 @@ class Admin: public Customer            //inheritance used
 
 public:
 
-    Admin()
-    {
-
-    }
-
     void Additional_options(Customer &client, string option, string input);
 
 };
