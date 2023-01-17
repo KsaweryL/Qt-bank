@@ -67,6 +67,14 @@ private slots:
 
     void on_pushButton_ComeBack_ListOfUsers_clicked();
 
+    void on_pushButton_changeNameAdmin_clicked();
+
+    void on_pushButton_changeSurnameAdmin_clicked();
+
+    void on_pushButton_changeLoginAdmin_clicked();
+
+    void on_pushButton_changePasswordAdmin_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

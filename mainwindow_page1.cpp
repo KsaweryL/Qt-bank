@@ -12,7 +12,7 @@ void MainWindow::on_pushButton_BackToMainMenuFromNewAccount_clicked()           
     for(int i = 0; i<N; i++)                 //to check if there is an empty slot for a new customer
     {
 
-        if(customer[i].name != "0") detector++;
+        if(customer[i]["name"] != "0") detector++;
     }
 
     try {
@@ -62,14 +62,14 @@ void MainWindow::on_pushButton_restate_clicked()
 
         for(customer_nr = 0; customer_nr<N; customer_nr++)                 //to check if there is an empty slot for a new customer and if there is - assing all of the data to it
         {
-            if(customer[customer_nr].name == "0") break;
+            if(customer[customer_nr]["name"] == "0") break;
 
         }
 
-        customer[customer_nr].name = newName;
-        customer[customer_nr].surname = newSurname;
-        customer[customer_nr].login = newLogin;
-        customer[customer_nr].password = newPassword;
+        customer[customer_nr]["name"] = newName;
+        customer[customer_nr]["surname"] = newSurname;
+        customer[customer_nr]["login"] = newLogin;
+        customer[customer_nr]["password"] = newPassword;
 
         ui->lineEdit_newName->setText("");                      //resetting the input
          ui->lineEdit_newSurname->setText("");

@@ -10,29 +10,29 @@ void MainWindow::on_pushButton_3_clicked()
 
     for(int i = 0; i<N; i++)
     {
-        if(customer[i].name != "0"){
-        if((ui->lineEdit_login->text()).toStdString() == customer[i].login &&
-                (ui->lineEdit_password->text()).toStdString() == customer[i].password &&
+        if(customer[i]["name"] != "0"){
+        if((ui->lineEdit_login->text()).toStdString() == customer[i]["login"] &&
+                (ui->lineEdit_password->text()).toStdString() == customer[i]["password"] &&
                 (ui->lineEdit_login->text()).toStdString() != "" &&
                 (ui->lineEdit_password->text()).toStdString() != "")
             {
 
-                ui->textBrowser_welcome->setText("                                  Welcome " + QString::fromStdString(customer[i].name) + "!");
+                ui->textBrowser_welcome->setText("                                  Welcome " + QString::fromStdString(customer[i]["name"]) + "!");
 
-                customer[i].active = 1;
-                ui->textBrowser_currentBalance->setText("Current bank balance: " + QString::number(customer[i].bank_balance)+ "\nCurrent amount of owed money: " + QString::number(customer[i].loanOwe));          //showing the current bank balance of the user
+                customer[i].Change("1", "active") ;
+                ui->textBrowser_currentBalance->setText("Current bank balance: " + QString::number(customer[i].Return_float("bank_balance"))+ "\nCurrent amount of owed money: " + QString::number(customer[i].Return_float("loanOwe")));          //showing the current bank balance of the user
 
                 ui->lineEdit_login->setText("");                   //resetting the input for both login and password
                 ui->lineEdit_password->setText("");
 
-                if(customer[i].ban_status == 1)
+                if(customer[i].Return_float("ban_status") == 1)
                 {
                     ui->pushButton_InsertMoney->hide();
                     ui->pushButton_WithdrawMoney->hide();
                     ui->pushButton_TransferMoney->hide();
                     ui->pushButton_TakeOutLoan->hide();
                     ui->pushButton_GiveBackMoney->hide();
-                    ui->textBrowser_currentBalance->setText("Your acccount is temporarily banned! All of the options are blocked. \nCurrent bank balance: " + QString::number(customer[i].bank_balance) + "\nCurrent loan balance: " + QString::number(customer[i].loanOwe));
+                    ui->textBrowser_currentBalance->setText("Your acccount is temporarily banned! All of the options are blocked. \nCurrent bank balance: " + QString::number(customer[i].Return_float("bank_balance")) + "\nCurrent loan balance: " + QString::number(customer[i].Return_float("loanOwe")));
                 }
                 else
                 {
@@ -43,7 +43,7 @@ void MainWindow::on_pushButton_3_clicked()
                     ui->pushButton_GiveBackMoney->show();
                 }
 
-                if(customer[i].login == admin.login) {ui->pushButton_BanningTheUser->show();   //if admin is detected, show "more options" button
+                if(customer[i]["login"] == admin["login"]) {ui->pushButton_BanningTheUser->show();   //if admin is detected, show "more options" button
                     ui->pushButton_UnbanningTheUser->show();
                 ui->pushButton_MoreOptions->show();
                 }
@@ -64,7 +64,7 @@ void MainWindow::on_pushButton_comeBack_clicked()
 
     for(int i = 0; i<N; i++)                 //resetting the active status for all users when coming back to main menu
     {
-        customer[i].active = 0;
+        customer[i].Change("0", "active");
     }
 
 }

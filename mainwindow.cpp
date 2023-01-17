@@ -13,8 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     for(int i = 0; i<N; i++)
     {
-        customer[i].name = "0";
-        customer[i].surname = "0";
+        customer[i].Change("0", "name");
+        customer[i].Change("0", "surname");
     }
         admin.Change("admin", "login");
         admin.Change("adminpass", "password");
@@ -57,6 +57,7 @@ MainWindow::~MainWindow()
 
     delete ui;
 }
+
 
 
 

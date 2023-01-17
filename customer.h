@@ -8,9 +8,6 @@ using namespace std;
 
 class Customer
 {
-
-public:
-
     string name, surname, login, password;
     float active;
     float bank_balance;
@@ -18,6 +15,8 @@ public:
     float loanOwe;							//how much money one has to return
     float ban_status;
 
+
+public:
 
     Customer()
     {
@@ -58,7 +57,7 @@ public:
        else return "0";
    }
 
-   float Return_float(string type_of_input)                                         //for returning a float
+   float Return_float (string type_of_input)                                         //for returning a float
    {
        if(type_of_input == "active") return active;
        else if(type_of_input == "bank_balance") return bank_balance;

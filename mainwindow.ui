@@ -27,7 +27,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="page_0">
      <property name="styleSheet">
@@ -587,7 +587,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="placeholderText">
-       <string>Name of the person to whom you would like to transfer the money</string>
+       <string>Name of the person</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_TransferToPerson_Surname">
@@ -603,7 +603,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="placeholderText">
-       <string>Surname of the person to whom you would like to transfer the money</string>
+       <string>Surname of the person</string>
       </property>
      </widget>
     </widget>
@@ -669,9 +669,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QTextBrowser" name="textBrowser_BanUserInfo">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>150</x>
         <y>290</y>
-        <width>211</width>
+        <width>371</width>
         <height>31</height>
        </rect>
       </property>
@@ -812,6 +812,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </property>
       <property name="text">
        <string>Change the password of the user</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="textBrowser_3">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>20</y>
+        <width>341</width>
+        <height>51</height>
+       </rect>
       </property>
      </widget>
     </widget>

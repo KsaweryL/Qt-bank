@@ -14,7 +14,7 @@ public:
 
     }
 
-    void Banning(Customer client);
+    void Additional_options(Customer &client, string option, string input);
 
 };
 
