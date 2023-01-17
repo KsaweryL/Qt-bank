@@ -66,10 +66,11 @@ void MainWindow::on_pushButton_restate_clicked()
 
         }
 
-        customer[customer_nr]["name"] = newName;
-        customer[customer_nr]["surname"] = newSurname;
-        customer[customer_nr]["login"] = newLogin;
-        customer[customer_nr]["password"] = newPassword;
+        //customer[customer_nr]["name"] = newName;
+        customer[customer_nr].Change(newName, "name");
+        customer[customer_nr].Change(newSurname, "surname");
+        customer[customer_nr].Change(newLogin, "login");
+        customer[customer_nr].Change(newPassword, "password");
 
         ui->lineEdit_newName->setText("");                      //resetting the input
          ui->lineEdit_newSurname->setText("");

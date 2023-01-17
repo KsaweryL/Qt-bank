@@ -27,7 +27,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page_0">
      <property name="styleSheet">
@@ -43,7 +43,7 @@
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-color: rgb(0, 0, 0);</string>
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Login</string>
@@ -59,7 +59,7 @@
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-color: rgb(0, 0, 0);</string>
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Create a new account</string>
@@ -75,7 +75,8 @@
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
+       <string notr="true">border-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));
+font: 350 9pt &quot;Segoe UI&quot;;</string>
       </property>
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -84,8 +85,8 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:28pt;&quot;&gt;Welcome to the bank!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:350; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:400;&quot;&gt;Welcome to the bank!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QTextBrowser" name="textBrowser_Announcement">
@@ -98,7 +99,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
+       <string notr="true">gridline-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
      </widget>
     </widget>
@@ -109,7 +110,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QTextBrowser" name="textBrowser_InfoNewAccount">
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>90</x>
         <y>10</y>
         <width>631</width>
         <height>91</height>
@@ -132,10 +133,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QLineEdit" name="lineEdit_newName">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>120</y>
-        <width>113</width>
-        <height>20</height>
+        <x>80</x>
+        <y>110</y>
+        <width>171</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -157,10 +158,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QLineEdit" name="lineEdit_newSurname">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>150</y>
-        <width>113</width>
-        <height>20</height>
+        <x>80</x>
+        <y>170</y>
+        <width>171</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -173,10 +174,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QLineEdit" name="lineEdit_newTempLogin">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>180</y>
-        <width>113</width>
-        <height>20</height>
+        <x>80</x>
+        <y>230</y>
+        <width>171</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -189,10 +190,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QLineEdit" name="lineEdit_newTempPassword">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>210</y>
-        <width>113</width>
-        <height>20</height>
+        <x>80</x>
+        <y>290</y>
+        <width>171</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -205,11 +206,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_insertNewData">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>250</y>
-        <width>101</width>
-        <height>31</height>
+        <x>270</x>
+        <y>330</y>
+        <width>141</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Insert</string>
@@ -218,10 +222,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QTextBrowser" name="textBrowser_RepeatPassword">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>330</y>
-        <width>311</width>
-        <height>31</height>
+        <x>310</x>
+        <y>430</y>
+        <width>401</width>
+        <height>71</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -231,10 +235,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QLineEdit" name="lineEdit_restatePassword">
       <property name="geometry">
        <rect>
-        <x>230</x>
-        <y>210</y>
-        <width>211</width>
-        <height>21</height>
+        <x>470</x>
+        <y>170</y>
+        <width>231</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -253,6 +257,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <height>51</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
+      </property>
       <property name="text">
        <string>Come back to main menu</string>
       </property>
@@ -260,11 +267,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_restate">
       <property name="geometry">
        <rect>
-        <x>280</x>
+        <x>560</x>
         <y>250</y>
-        <width>101</width>
-        <height>31</height>
+        <width>141</width>
+        <height>41</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Restate</string>
@@ -284,6 +294,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <height>31</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
+      </property>
       <property name="text">
        <string>Log in</string>
       </property>
@@ -297,6 +310,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <height>61</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
+      </property>
       <property name="text">
        <string>Come back</string>
       </property>
@@ -306,8 +322,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <rect>
         <x>60</x>
         <y>110</y>
-        <width>121</width>
-        <height>31</height>
+        <width>181</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -322,8 +338,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <rect>
         <x>60</x>
         <y>160</y>
-        <width>121</width>
-        <height>31</height>
+        <width>181</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -361,8 +377,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <rect>
         <x>60</x>
         <y>260</y>
-        <width>211</width>
-        <height>31</height>
+        <width>251</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -401,10 +417,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <property name="geometry">
        <rect>
         <x>70</x>
-        <y>150</y>
-        <width>121</width>
-        <height>31</height>
+        <y>160</y>
+        <width>151</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Insert money</string>
@@ -414,10 +433,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <property name="geometry">
        <rect>
         <x>70</x>
-        <y>200</y>
-        <width>121</width>
-        <height>31</height>
+        <y>230</y>
+        <width>151</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Withdraw money</string>
@@ -427,10 +449,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <property name="geometry">
        <rect>
         <x>70</x>
-        <y>250</y>
-        <width>121</width>
-        <height>31</height>
+        <y>300</y>
+        <width>151</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Transfer money</string>
@@ -452,11 +477,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_TakeOutLoan">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>150</y>
-        <width>161</width>
-        <height>31</height>
+        <x>440</x>
+        <y>160</y>
+        <width>171</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Take out a loan</string>
@@ -465,11 +493,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_GiveBackMoney">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>200</y>
-        <width>161</width>
-        <height>31</height>
+        <x>440</x>
+        <y>230</y>
+        <width>171</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Give back money</string>
@@ -484,6 +515,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <height>51</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
+      </property>
       <property name="text">
        <string>Come back to main Menu</string>
       </property>
@@ -491,11 +525,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_MoreOptions">
       <property name="geometry">
        <rect>
-        <x>430</x>
+        <x>440</x>
         <y>300</y>
-        <width>151</width>
-        <height>31</height>
+        <width>171</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>More options</string>
@@ -510,9 +547,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <property name="geometry">
        <rect>
         <x>170</x>
-        <y>30</y>
-        <width>351</width>
-        <height>31</height>
+        <y>20</y>
+        <width>461</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -522,10 +559,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QLineEdit" name="lineEdit_InsertAmount">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>170</y>
-        <width>241</width>
-        <height>31</height>
+        <x>70</x>
+        <y>230</y>
+        <width>261</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -538,10 +575,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QTextBrowser" name="textBrowser_confirmationMoney">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>320</y>
-        <width>391</width>
-        <height>31</height>
+        <x>290</x>
+        <y>340</y>
+        <width>451</width>
+        <height>61</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -551,11 +588,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_insert">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>220</y>
-        <width>101</width>
-        <height>41</height>
+        <x>370</x>
+        <y>230</y>
+        <width>131</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Insert</string>
@@ -564,11 +604,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_comeBackInsert">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>367</y>
-        <width>101</width>
-        <height>31</height>
+        <x>10</x>
+        <y>450</y>
+        <width>151</width>
+        <height>61</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Come back</string>
@@ -577,10 +620,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QLineEdit" name="lineEdit_TransferToPerson_Name">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>80</y>
-        <width>301</width>
-        <height>31</height>
+        <x>120</x>
+        <y>90</y>
+        <width>321</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -593,10 +636,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QLineEdit" name="lineEdit_TransferToPerson_Surname">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>120</y>
-        <width>301</width>
-        <height>31</height>
+        <x>120</x>
+        <y>160</y>
+        <width>321</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -614,10 +657,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QTextBrowser" name="textBrowser_welcomeBan">
       <property name="geometry">
        <rect>
-        <x>200</x>
+        <x>150</x>
         <y>20</y>
-        <width>361</width>
-        <height>41</height>
+        <width>371</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -637,10 +680,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QLineEdit" name="lineEdit_enterUserNameBan">
       <property name="geometry">
        <rect>
-        <x>210</x>
+        <x>100</x>
         <y>120</y>
-        <width>221</width>
-        <height>31</height>
+        <width>241</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -653,10 +696,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QLineEdit" name="lineEdit_enterUserSurnameBan">
       <property name="geometry">
        <rect>
-        <x>210</x>
-        <y>160</y>
-        <width>221</width>
-        <height>31</height>
+        <x>100</x>
+        <y>190</y>
+        <width>241</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -669,10 +712,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QTextBrowser" name="textBrowser_BanUserInfo">
       <property name="geometry">
        <rect>
-        <x>150</x>
-        <y>290</y>
+        <x>330</x>
+        <y>330</y>
         <width>371</width>
-        <height>31</height>
+        <height>71</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -682,11 +725,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_comeBackBan">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>370</y>
-        <width>101</width>
-        <height>41</height>
+        <x>10</x>
+        <y>440</y>
+        <width>151</width>
+        <height>61</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Come back</string>
@@ -695,11 +741,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_Ban">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>230</y>
-        <width>101</width>
-        <height>31</height>
+        <x>360</x>
+        <y>240</y>
+        <width>121</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Ban</string>
@@ -713,9 +762,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QTextBrowser" name="textBrowser_ListOfUsers">
       <property name="geometry">
        <rect>
-        <x>490</x>
+        <x>515</x>
         <y>60</y>
-        <width>256</width>
+        <width>231</width>
         <height>391</height>
        </rect>
       </property>
@@ -726,11 +775,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_ComeBack_ListOfUsers">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>448</y>
-        <width>141</width>
+        <x>10</x>
+        <y>470</y>
+        <width>181</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Come back</string>
@@ -739,11 +791,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_BanningTheUser">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>80</y>
-        <width>161</width>
-        <height>29</height>
+        <x>70</x>
+        <y>70</y>
+        <width>251</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Ban a user</string>
@@ -752,11 +807,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_UnbanningTheUser">
       <property name="geometry">
        <rect>
-        <x>60</x>
+        <x>70</x>
         <y>130</y>
-        <width>161</width>
-        <height>29</height>
+        <width>251</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 190, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Unban a user</string>
@@ -765,11 +823,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_changeNameAdmin">
       <property name="geometry">
        <rect>
-        <x>60</x>
+        <x>70</x>
         <y>200</y>
-        <width>231</width>
-        <height>31</height>
+        <width>251</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 146, 95, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Change the name of the user</string>
@@ -778,11 +839,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_changeSurnameAdmin">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>250</y>
-        <width>231</width>
-        <height>31</height>
+        <x>70</x>
+        <y>260</y>
+        <width>251</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 146, 95, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Change the surname of the user</string>
@@ -791,11 +855,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_changeLoginAdmin">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>320</y>
-        <width>231</width>
-        <height>31</height>
+        <x>70</x>
+        <y>330</y>
+        <width>251</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 215, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Change the login of the user</string>
@@ -804,11 +871,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QPushButton" name="pushButton_changePasswordAdmin">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>360</y>
-        <width>231</width>
-        <height>31</height>
+        <x>70</x>
+        <y>390</y>
+        <width>251</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 215, 255), stop:1 rgba(255, 255, 255, 255));</string>
       </property>
       <property name="text">
        <string>Change the password of the user</string>
@@ -819,8 +889,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <rect>
         <x>80</x>
         <y>20</y>
-        <width>341</width>
-        <height>51</height>
+        <width>421</width>
+        <height>41</height>
        </rect>
       </property>
      </widget>

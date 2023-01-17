@@ -85,13 +85,13 @@ void MainWindow::on_pushButton_WithdrawMoney_clicked()
 
 void MainWindow::on_pushButton_MoreOptions_clicked()
 {
-    string list_of_users = "";
+    string list_of_users = "List of users:\n\n";
     for(int i = 0; i<N; i++)
     {
         if(customer[i]["name"] != "0") {
             list_of_users.append(customer[i]["name"]);
             list_of_users.append(" ");
-            list_of_users.append(customer[i]["name"]);
+            list_of_users.append(customer[i]["surname"]);
             list_of_users.append("\n\n");
         }
     }

@@ -17,10 +17,31 @@ void MainWindow::on_pushButton_comeBackInsert_clicked()
     ui->textBrowser_confirmationMoney->setText("");
 }
 
+void Checking_if_the_user_exists(Customer customer[], string &given_name, string &given_surname, int &det, Ui::MainWindow *ui, int &customer_nr_to_whom)
+{
+    customer_nr_to_whom = 0;
+    for(customer_nr_to_whom = 0; customer_nr_to_whom<N; customer_nr_to_whom++)                 //to check if the mentioned user exists
+    {
+        if(customer[customer_nr_to_whom]["name"] == given_name && customer[customer_nr_to_whom]["surname"] == given_surname) break;
+    }
+
+
+    try{
+        if(customer_nr_to_whom == N) throw 1;
+    }
+    catch(int x){
+        det = 1;
+        ui->textBrowser_confirmationMoney->setText("Exception cought: the given user doesn't exist");
+    }
+}
+
 void MainWindow::on_pushButton_insert_clicked()
 {
+    string given_name, given_surname;
+    given_name = ui->lineEdit_TransferToPerson_Name->text().toStdString();
+    given_surname = ui->lineEdit_TransferToPerson_Surname->text().toStdString();
 
-    if(ui->lineEdit_InsertAmount->placeholderText() == "Insert amount of money here")
+    if(ui->lineEdit_InsertAmount->placeholderText() == "Insert amount of money here")           //options regarding the money
     {
         int customer_nr = 0;
         for(customer_nr = 0; customer_nr<N; customer_nr++)                 //to check which customer is currently active
@@ -87,7 +108,7 @@ void MainWindow::on_pushButton_insert_clicked()
 
              if(ui->pushButton_insert->text() == "Transfer")                         //when user wants to trasfer money to someone else
              {
-                 int det = 0;                                                                       //needs to be optimised!!!
+                 int det = 0;
                  try{
                      if(stof(ui->lineEdit_InsertAmount->text().toStdString()) > customer[customer_nr].Return_float("bank_balance")) throw 'a';       //if user wants to transfer more money than he/she currently has, throw an exception
                  }
@@ -97,24 +118,10 @@ void MainWindow::on_pushButton_insert_clicked()
                      ui->textBrowser_confirmationMoney->setText("Exception cought: not enough money on the account");
                  }
 
-                 string given_name, given_surname;
-                 given_name = ui->lineEdit_TransferToPerson_Name->text().toStdString();
-                 given_surname = ui->lineEdit_TransferToPerson_Surname->text().toStdString();
 
-                 int customer_nr_to_whom = 0;
-                 for(customer_nr_to_whom = 0; customer_nr_to_whom<N; customer_nr_to_whom++)                 //to check to which customer the money should be transferred
-                 {
-                     if(customer[customer_nr_to_whom]["name"] == given_name && customer[customer_nr_to_whom]["surname"] == given_surname) break;
-                 }
+                int customer_nr_to_whom = 0;
+                Checking_if_the_user_exists(customer, given_name, given_surname, det, ui, customer_nr_to_whom);
 
-
-                 try{
-                     if(customer_nr_to_whom == N) throw 1;
-                 }
-                 catch(int x){
-                     det = 1;
-                     ui->textBrowser_confirmationMoney->setText("Exception cought: the given user doesn't exist");
-                 }
                  if(det == 0)
                  {
                      customer[customer_nr] - stof(ui->lineEdit_InsertAmount->text().toStdString());      //converting qstring to string and then to float
@@ -128,26 +135,35 @@ void MainWindow::on_pushButton_insert_clicked()
 
             ui->textBrowser_currentBalance->setText("Current bank balance: " + QString::number(customer[customer_nr].Return_float("bank_balance")) + "\nCurrent amount of owed money: " + QString::number(customer[customer_nr].Return_float("loanOwe")));          //showing the current bank balance of the user
     }
-    else
+    else                    //regarding users' data
     {
-        if(ui->lineEdit_InsertAmount->placeholderText() == "Insert a new name")
-        {
+        int det = 0;
 
-        }
-        else if(ui->lineEdit_InsertAmount->placeholderText() == "Insert a new name")
-        {
+        int customer_nr_whoose = 0;
+        Checking_if_the_user_exists(customer, given_name, given_surname, det, ui, customer_nr_whoose);
 
-        }
-        else if(ui->lineEdit_InsertAmount->placeholderText() == "Insert a new surname")
-        {
+        if(det == 0){                                                                               //if the user exists
+            if(ui->lineEdit_InsertAmount->placeholderText() == "Insert a new name")
+            {
+                    admin.Additional_options(customer[customer_nr_whoose],"change_the_name", ui->lineEdit_InsertAmount->text().toStdString());
+                    ui->textBrowser_confirmationMoney->setText("A new name has been set");
+            }
+            else if(ui->lineEdit_InsertAmount->placeholderText() == "Insert a new surname")
+            {
+                admin.Additional_options(customer[customer_nr_whoose],"change_the_surname", ui->lineEdit_InsertAmount->text().toStdString());
+                ui->textBrowser_confirmationMoney->setText("A new surname has been set");
+            }
+            else if(ui->lineEdit_InsertAmount->placeholderText() == "Insert a new login")
+            {
+                   admin.Additional_options(customer[customer_nr_whoose],"change_the_login", ui->lineEdit_InsertAmount->text().toStdString());
+                   ui->textBrowser_confirmationMoney->setText("A new login has been set");
+            }
+            else if(ui->lineEdit_InsertAmount->placeholderText() == "Insert a new password")
+            {
+                admin.Additional_options(customer[customer_nr_whoose],"change_the_password", ui->lineEdit_InsertAmount->text().toStdString());
+                ui->textBrowser_confirmationMoney->setText("A new password has been set");
+            }
 
-        }
-        else if(ui->lineEdit_InsertAmount->placeholderText() == "Insert a new login")
-        {
-
-        }
-        else if(ui->lineEdit_InsertAmount->placeholderText() == "Insert a new password")
-        {
 
         }
 
