@@ -18,12 +18,6 @@ public:
    Customer customer[N];
    Admin admin;
 
-//should I even add this?
-   Customer *customer_p = new Admin;
-   Admin* admin_p = dynamic_cast<Admin*>(customer_p);           //rtti, downcacsting (pointer of a base class is treated as a pointer of the derived class;
-
-   //admin_p = &admin;                //?
-
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 

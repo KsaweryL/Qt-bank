@@ -2,6 +2,6 @@
 
 void Admin::Banning(Customer client)
 {
-    client.ban_status = 1;
+    client.Change("1", "ban_status");
 }
 

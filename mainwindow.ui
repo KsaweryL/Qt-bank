@@ -24,14 +24,14 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 255, 127);</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="page_0">
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 255, 127);</string>
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <widget class="QPushButton" name="pushButton_login">
       <property name="geometry">
@@ -103,6 +103,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </widget>
     </widget>
     <widget class="QWidget" name="page_1">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
      <widget class="QTextBrowser" name="textBrowser_InfoNewAccount">
       <property name="geometry">
        <rect>
@@ -217,7 +220,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <rect>
         <x>280</x>
         <y>330</y>
-        <width>191</width>
+        <width>311</width>
         <height>31</height>
        </rect>
       </property>
@@ -269,6 +272,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </widget>
     </widget>
     <widget class="QWidget" name="page_2">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
      <widget class="QPushButton" name="pushButton_3">
       <property name="geometry">
        <rect>
@@ -375,6 +381,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </widget>
     </widget>
     <widget class="QWidget" name="page_3">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
      <widget class="QTextBrowser" name="textBrowser_welcome">
       <property name="geometry">
        <rect>
@@ -494,6 +503,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </widget>
     </widget>
     <widget class="QWidget" name="page_4">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
      <widget class="QTextBrowser" name="textBrowser_MoneyGeneral">
       <property name="geometry">
        <rect>
@@ -596,6 +608,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </widget>
     </widget>
     <widget class="QWidget" name="page_5">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
      <widget class="QTextBrowser" name="textBrowser_welcomeBan">
       <property name="geometry">
        <rect>
@@ -692,6 +707,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </widget>
     </widget>
     <widget class="QWidget" name="page_6">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
      <widget class="QTextBrowser" name="textBrowser_ListOfUsers">
       <property name="geometry">
        <rect>
