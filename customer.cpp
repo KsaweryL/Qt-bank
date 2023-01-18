@@ -146,7 +146,7 @@ void Customer::FileOutput(Customer customer[], int nrUsers)
 
                 string bank_balance_str = "", loan_balance_str = "", loanOwe_str = "", ban_status_str = "", login_str = "", password_str = "", name_str = "", surname_str = "";
 
-                for(int j = 6; j<name.size(); j++) name_str += name[j];
+                for(int j = 6; j<name.size(); j++) name_str += name[j];                     //only a part after the colon character (:) should be read and stored in the members of the customer object
                 for(int j = 9; j<surname.size(); j++) surname_str += surname[j];
                 for(int j = 14; j<customer_bank_balance.size(); j++) {bank_balance_str += customer_bank_balance[j];loan_balance_str += customer_loan_balance[j];}
                 for(int j = 25; j<customer_loanOwe.size(); j++) loanOwe_str += customer_loanOwe[j];

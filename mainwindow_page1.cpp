@@ -66,7 +66,6 @@ void MainWindow::on_pushButton_restate_clicked()
 
         }
 
-        //customer[customer_nr]["name"] = newName;
         customer[customer_nr].Change(newName, "name");
         customer[customer_nr].Change(newSurname, "surname");
         customer[customer_nr].Change(newLogin, "login");
