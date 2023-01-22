@@ -124,7 +124,7 @@ void Customer::FileOutput(Customer customer[], int nrUsers)
                 if(i == 0) file_name = "Admin.txt";
                 else {
                    file_name = "Customer_";
-                      file_name.append(customer[i].surname);        //!
+                      file_name.append(customer[i].surname);
                     file_name.append(".txt");
                 }
 
