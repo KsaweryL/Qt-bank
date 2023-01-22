@@ -15,7 +15,6 @@ void MainWindow::on_pushButton_newAccount_clicked()
 {
     for(int i = 0; i<N; i++)                 //resetting the active status for all users just in case
     {
-        //customer[i].active = 0;
         customer[i].Change("0", "active");
     }
 
