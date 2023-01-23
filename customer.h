@@ -101,6 +101,8 @@ public:
 
     void FileInput(Customer customer[], int nrUsers);          //performing a write operation into the file
     void FileOutput(Customer customer[], int nrUsers);          //getting data from the file
+    string Ciphering(string option);
+    void Deciphering(string ciphered_password, string option);
 
 };
 

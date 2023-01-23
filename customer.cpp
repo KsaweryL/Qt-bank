@@ -4,6 +4,27 @@
 
 #define N 10
 
+string Customer::Ciphering(string option)                                //ciphering the password or the login
+{
+    string ciphered_string = "";
+    if(option == "password") ciphered_string = password;
+    if(option == "login") ciphered_string = login;
+
+    for(int i = 0; i<ciphered_string.size();i++ ) ciphered_string[i] += 4;
+
+    return ciphered_string;
+}
+
+void Customer::Deciphering(string ciphered_string, string option)        //deciphering the password or the login
+{
+    string Deciphered_string = ciphered_string;
+
+    for(int i = 0; i<Deciphered_string.size();i++ ) Deciphered_string[i] -= 4;
+
+    if(option == "password") password = Deciphered_string;
+    if(option == "login") login = Deciphered_string;
+}
+
 void Customer::FileInput(Customer customer[], int nrUsers)				//the funcion used to create files with users' data
 {
     for (int i = 0; i < nrUsers; i++)
@@ -34,10 +55,10 @@ void Customer::FileInput(Customer customer[], int nrUsers)				//the funcion used
             output[5].append(loanOwe);
 
             output[6] = "\nLogin: ";
-            output[6].append(customer[i].login);
+            output[6].append(customer[i].Ciphering("login"));
 
             output[7] = "\nPassword: ";
-            output[7].append(customer[i].password);
+            output[7].append(customer[i].Ciphering("password"));              //the password saved in the file is ciphered
 
             output[0].append(output[1]);
             output[0].append(output[2]);
@@ -155,15 +176,14 @@ void Customer::FileOutput(Customer customer[], int nrUsers)
                 for(int j = 10; j<customer_password.size(); j++) password_str += customer_password[j];
 
 
+                customer[i].Deciphering(password_str, "password");                  //deciphering the password and assigning it to the object
+                customer[i].Deciphering(login_str, "login");                        //deciphering the login and assigning it to the object
                 customer[i].name = name_str;
                 customer[i].surname = surname_str;
                 customer[i].bank_balance = stof(bank_balance_str);
                 customer[i].loan = stof(loan_balance_str);
                 customer[i].loanOwe = stof(loanOwe_str);
                 customer[i].ban_status = stof(ban_status_str);
-                customer[i].login = login_str;
-                customer[i].password = password_str;
-
 
     }
 
