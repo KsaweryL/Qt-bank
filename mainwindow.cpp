@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     {
         customer[i].Change("0", "name");
         customer[i].Change("0", "surname");
+        customer[i].Change(to_string(i), "customer_nr");            //assigning a unique number for each of the users
     }
         admin.Change("admin", "login");
         admin.Change("adminpass", "password");
@@ -39,7 +40,6 @@ MainWindow::MainWindow(QWidget *parent)
         ui->stackedWidget->setCurrentIndex(0);
 
         ui->lineEdit_TransferToPerson_Name->hide();      //hiding the the transfer option in the beginning
-         ui->lineEdit_TransferToPerson_Surname->hide();
 
         ui->pushButton_BanningTheUser->hide();              //hiding the possibility to ban the user in the beginning
         ui->pushButton_UnbanningTheUser->hide();              //hiding the possibility to unban the user in the beginning
@@ -57,7 +57,4 @@ MainWindow::~MainWindow()
 
     delete ui;
 }
-
-
-
 

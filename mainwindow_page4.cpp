@@ -8,7 +8,6 @@
 void MainWindow::on_pushButton_comeBackInsert_clicked()
 {
     ui->lineEdit_TransferToPerson_Name->hide();                         //hiding additional functions
-    ui->lineEdit_TransferToPerson_Surname->hide();
 
     ui->lineEdit_InsertAmount->setPlaceholderText("Insert amount of money here");
     ui->stackedWidget->setCurrentIndex(3);
@@ -17,12 +16,12 @@ void MainWindow::on_pushButton_comeBackInsert_clicked()
     ui->textBrowser_confirmationMoney->setText("");
 }
 
-void Checking_if_the_user_exists(Customer customer[], string &given_name, string &given_surname, int &det, Ui::MainWindow *ui, int &customer_nr_to_whom)
+void Checking_if_the_user_exists(Customer customer[], string &given_user_nr, int &det, Ui::MainWindow *ui, int &customer_nr_to_whom)
 {
     customer_nr_to_whom = 0;
     for(customer_nr_to_whom = 0; customer_nr_to_whom<N; customer_nr_to_whom++)                 //to check if the mentioned user exists
     {
-        if(customer[customer_nr_to_whom]["name"] == given_name && customer[customer_nr_to_whom]["surname"] == given_surname) break;
+        if(customer[customer_nr_to_whom].Return_float("customer_nr") == stof(given_user_nr) && customer[customer_nr_to_whom]["login"] != "0") break;
     }
 
 
@@ -31,15 +30,14 @@ void Checking_if_the_user_exists(Customer customer[], string &given_name, string
     }
     catch(int x){
         det = 1;
-        ui->textBrowser_confirmationMoney->setText("Exception cought: the given user doesn't exist");
+        ui->textBrowser_confirmationMoney->setText("Exception caught: the given user doesn't exist");
     }
 }
 
 void MainWindow::on_pushButton_insert_clicked()
 {
-    string given_name, given_surname;
-    given_name = ui->lineEdit_TransferToPerson_Name->text().toStdString();
-    given_surname = ui->lineEdit_TransferToPerson_Surname->text().toStdString();
+    string given_user_nr, given_surname;
+    given_user_nr = ui->lineEdit_TransferToPerson_Name->text().toStdString();
 
     if(ui->lineEdit_InsertAmount->placeholderText() == "Insert amount of money here")           //options regarding the money
     {
@@ -120,7 +118,7 @@ void MainWindow::on_pushButton_insert_clicked()
 
 
                 int customer_nr_to_whom = 0;
-                Checking_if_the_user_exists(customer, given_name, given_surname, det, ui, customer_nr_to_whom);
+                Checking_if_the_user_exists(customer, given_user_nr, det, ui, customer_nr_to_whom);
 
                  if(det == 0)
                  {
@@ -140,7 +138,7 @@ void MainWindow::on_pushButton_insert_clicked()
         int det = 0;
 
         int customer_nr_whoose = 0;
-        Checking_if_the_user_exists(customer, given_name, given_surname, det, ui, customer_nr_whoose);
+        Checking_if_the_user_exists(customer,given_user_nr, det, ui, customer_nr_whoose);
 
         if(det == 0){                                                                               //if the user exists
             if(ui->lineEdit_InsertAmount->placeholderText() == "Insert a new name")

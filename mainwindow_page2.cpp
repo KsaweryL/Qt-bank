@@ -17,7 +17,7 @@ void MainWindow::on_pushButton_3_clicked()
                 (ui->lineEdit_password->text()).toStdString() != "")
             {
 
-                ui->textBrowser_welcome->setText("                                  Welcome " + QString::fromStdString(customer[i]["name"]) + "!");
+                ui->textBrowser_welcome->setText("                                  Welcome " + QString::fromStdString(customer[i]["name"]) + "!\n                                  User's number: "+ QString::number(customer[i].Return_float("customer_nr")));
 
                 customer[i].Change("1", "active") ;
                 ui->textBrowser_currentBalance->setText("Current bank balance: " + QString::number(customer[i].Return_float("bank_balance"))+ "\nCurrent amount of owed money: " + QString::number(customer[i].Return_float("loanOwe")));          //showing the current bank balance of the user

@@ -48,15 +48,30 @@ void MainWindow::on_pushButton_restate_clicked()
     tempNewPassword = (ui->lineEdit_newTempPassword->text()).toStdString();
     newPassword = (ui->lineEdit_restatePassword->text()).toStdString();
 
+    int detector = 0;               //detects if exception was caught
     try{
         if(newPassword != tempNewPassword) throw 1;
     }
     catch (int x)
     {
         ui->textBrowser_RepeatPassword->setText("Exception caught: Passwords do not match. Please redefine them");
+        detector++;
     }
 
-    if(newPassword == tempNewPassword)              //everything is correct, creating new account
+    try{
+        int i;
+        for(i = 0; i<N; i++)
+        {
+            if(customer[i]["login"] == newLogin) throw 'a';
+         }
+    }
+    catch (char x)
+    {
+        ui->textBrowser_RepeatPassword->setText("Exception caught: Login is already in use. Please redefine it");
+        detector++;
+    }
+
+    if(detector == 0)              //everything is correct, creating new account
     {
         int customer_nr = 0;
 
