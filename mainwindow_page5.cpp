@@ -7,14 +7,14 @@
 
 void MainWindow::on_pushButton_Ban_clicked()
 {
-    string input_name = ui->lineEdit_enterUserNameBan->text().toStdString();
-    string input_surname = ui->lineEdit_enterUserSurnameBan->text().toStdString();
+    string given_user_nr = ui->lineEdit_enterUserNameBan->text().toStdString();
+
     Admin admin;
 
     int customer_int = 0;
     for(customer_int = 0; customer_int<N; customer_int++)
     {
-        if(customer[customer_int]["name"] == input_name && customer[customer_int]["surname"] == input_surname) break;
+        if(customer[customer_int].Return_float("customer_nr") == stof(given_user_nr)) break;
     }
 
     try{                                                                    //checking if the user exists in the database
@@ -42,6 +42,6 @@ void MainWindow::on_pushButton_Ban_clicked()
 void MainWindow::on_pushButton_comeBackBan_clicked()
 {
     ui->lineEdit_enterUserNameBan->setText("");             //resetting the input
-    ui->lineEdit_enterUserSurnameBan->setText("");
+
     ui->stackedWidget->setCurrentIndex(3);
 }

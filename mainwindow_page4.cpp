@@ -8,7 +8,6 @@
 void MainWindow::on_pushButton_comeBackInsert_clicked()
 {
     ui->lineEdit_TransferToPerson_Name->hide();                         //hiding additional functions
-    ui->lineEdit_TransferToPerson_Surname->hide();
 
     ui->lineEdit_InsertAmount->setPlaceholderText("Insert amount of money here");
     ui->stackedWidget->setCurrentIndex(3);
@@ -17,29 +16,36 @@ void MainWindow::on_pushButton_comeBackInsert_clicked()
     ui->textBrowser_confirmationMoney->setText("");
 }
 
-void Checking_if_the_user_exists(Customer customer[], string &given_name, string &given_surname, int &det, Ui::MainWindow *ui, int &customer_nr_to_whom)
+void Checking_if_the_user_exists(Customer customer[], string &given_user_nr, int &det, Ui::MainWindow *ui, int &customer_nr_to_whom)
 {
-    customer_nr_to_whom = 0;
-    for(customer_nr_to_whom = 0; customer_nr_to_whom<N; customer_nr_to_whom++)                 //to check if the mentioned user exists
-    {
-        if(customer[customer_nr_to_whom]["name"] == given_name && customer[customer_nr_to_whom]["surname"] == given_surname) break;
-    }
-
-
-    try{
-        if(customer_nr_to_whom == N) throw 1;
+     try{
+        if(given_user_nr == "") throw 1;
     }
     catch(int x){
         det = 1;
-        ui->textBrowser_confirmationMoney->setText("Exception cought: the given user doesn't exist");
+    }
+
+    if(det == 0){
+        customer_nr_to_whom = 0;
+        for(customer_nr_to_whom = 0; customer_nr_to_whom<N; customer_nr_to_whom++)                 //to check if the mentioned user exists
+        {
+            if(customer[customer_nr_to_whom].Return_float("customer_nr") == stof(given_user_nr) && customer[customer_nr_to_whom]["login"] != "0") break;
+        }
+    }
+
+    try{
+        if(customer_nr_to_whom == N || det == 1) throw 1;
+    }
+    catch(int x){
+        det = 1;
+        ui->textBrowser_confirmationMoney->setText("Exception caught: the given user doesn't exist");
     }
 }
 
 void MainWindow::on_pushButton_insert_clicked()
 {
-    string given_name, given_surname;
-    given_name = ui->lineEdit_TransferToPerson_Name->text().toStdString();
-    given_surname = ui->lineEdit_TransferToPerson_Surname->text().toStdString();
+    string given_user_nr;
+    given_user_nr = ui->lineEdit_TransferToPerson_Name->text().toStdString();
 
     if(ui->lineEdit_InsertAmount->placeholderText() == "Insert amount of money here")           //options regarding the money
     {
@@ -71,7 +77,7 @@ void MainWindow::on_pushButton_insert_clicked()
             customer[customer_nr] + stof(ui->lineEdit_InsertAmount->text().toStdString());      //converting qstring to string and then to float
             ui->textBrowser_confirmationMoney->setText(ui->lineEdit_InsertAmount->text() + "zł was successfully added to your account");
             }
-        }
+
 
         if(ui->pushButton_insert->text() == "Withdraw")                                 //if we are withdrawing money
         {
@@ -120,9 +126,9 @@ void MainWindow::on_pushButton_insert_clicked()
 
 
                 int customer_nr_to_whom = 0;
-                Checking_if_the_user_exists(customer, given_name, given_surname, det, ui, customer_nr_to_whom);
+                Checking_if_the_user_exists(customer, given_user_nr, det, ui, customer_nr_to_whom);
 
-                 if(det == 0)
+                 if(det == 0 && detector == 0)
                  {
                      customer[customer_nr] - stof(ui->lineEdit_InsertAmount->text().toStdString());      //converting qstring to string and then to float
                      customer[customer_nr_to_whom] + stof(ui->lineEdit_InsertAmount->text().toStdString());     //adding the particular amount of money to the mentioned user's account
@@ -134,13 +140,14 @@ void MainWindow::on_pushButton_insert_clicked()
              }
 
             ui->textBrowser_currentBalance->setText("Current bank balance: " + QString::number(customer[customer_nr].Return_float("bank_balance")) + "\nCurrent amount of owed money: " + QString::number(customer[customer_nr].Return_float("loanOwe")));          //showing the current bank balance of the user
+        }
     }
     else                    //regarding users' data
     {
         int det = 0;
 
         int customer_nr_whoose = 0;
-        Checking_if_the_user_exists(customer, given_name, given_surname, det, ui, customer_nr_whoose);
+        Checking_if_the_user_exists(customer,given_user_nr, det, ui, customer_nr_whoose);
 
         if(det == 0){                                                                               //if the user exists
             if(ui->lineEdit_InsertAmount->placeholderText() == "Insert a new name")

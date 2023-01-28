@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#define N 10
 
 using namespace std;
 
@@ -15,7 +16,7 @@ class Customer
     float loanOwe;							//how much money one has to return
     float ban_status;
 
-
+    float customer_nr;                      //a unique number for each of the customers
 public:
 
     Customer()
@@ -29,8 +30,7 @@ public:
         loanOwe = 0;
         ban_status = 0;
         active = 0;
-
-
+        customer_nr = N+1;
     }
 
 
@@ -45,6 +45,7 @@ public:
         if(type_of_input == "loan") loan = stof(input);
         if(type_of_input == "loanOwe") loanOwe = stof(input);
         if(type_of_input == "ban_status") ban_status = stof(input);
+        if(type_of_input == "customer_nr") customer_nr = stof(input);
     }
 
 
@@ -64,6 +65,7 @@ public:
        else if(type_of_input == "loan") return loan;
        else if(type_of_input == "loanOwe") return loanOwe;
        else if(type_of_input == "ban_status") return ban_status;
+       else if(type_of_input == "customer_nr") return customer_nr;
        else return 0;
    }
 

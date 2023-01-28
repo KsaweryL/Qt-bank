@@ -75,6 +75,8 @@ private slots:
 
     void on_pushButton_changePasswordAdmin_clicked();
 
+    void on_lineEdit_TransferToPerson_Name_cursorPositionChanged(int arg1, int arg2);
+
 private:
     Ui::MainWindow *ui;
 };

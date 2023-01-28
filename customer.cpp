@@ -72,15 +72,17 @@ void Customer::FileInput(Customer customer[], int nrUsers)				//the funcion used
             {
                 name2 = "";
                 string name3(".txt");
-                name2.append(customer[i].surname);
+                name2.append(to_string(customer[i].customer_nr));
                 name2.append(name3);
             }
             else										//for the rest of the users
             {
+                if(customer[i].name != "0"){
                 name2 = "Customer_";
                 string name3(".txt");
-                name2.append(customer[i].surname);
+                name2.append(to_string(customer[i].customer_nr));
                 name2.append(name3);
+                }
             }
 
             fstream customerF;
@@ -101,7 +103,8 @@ void Customer::FileInput(Customer customer[], int nrUsers)				//the funcion used
     string list_of_users = "";
     for(int i = 0; i<N; i++)
     {
-
+            list_of_users.append(to_string(customer[i].customer_nr));
+            list_of_users.append("\n");
             list_of_users.append(customer[i].name);
             list_of_users.append("\n");
             list_of_users.append(customer[i].surname);
@@ -127,8 +130,11 @@ void Customer::FileOutput(Customer customer[], int nrUsers)
      if (list_of_customers.is_open())				//checking whether the file is open
      {
          for(int i = 0; i < nrUsers; i++){
+         string cutomer_nr = "";
+         getline(list_of_customers, cutomer_nr);
          getline(list_of_customers, customer[i].name);
          getline(list_of_customers, customer[i].surname);
+         customer[i].customer_nr = stof(cutomer_nr);
          }
          list_of_customers.close();
      }
@@ -142,10 +148,10 @@ void Customer::FileOutput(Customer customer[], int nrUsers)
                 string customer_bank_balance, customer_ban_status, customer_loan_balance, customer_loanOwe, name, surname, customer_login, customer_password;
 
                 string file_name, input;
-                if(i == 0) file_name = "Admin.txt";
+                if(i == 0) file_name = "0.000000.txt";
                 else {
                    file_name = "Customer_";
-                      file_name.append(customer[i].surname);
+                      file_name.append(to_string(customer[i].customer_nr));
                     file_name.append(".txt");
                 }
 

@@ -8,7 +8,7 @@
 void MainWindow::on_pushButton_BanningTheUser_clicked()
 {
     ui->lineEdit_TransferToPerson_Name->show();
-    ui->lineEdit_TransferToPerson_Surname->show();
+
     ui->lineEdit_InsertAmount->setPlaceholderText("Which user would you like to ban?");
      ui->stackedWidget->setCurrentIndex(5);
 }
@@ -58,7 +58,6 @@ void MainWindow::on_pushButton_TransferMoney_clicked()
     ui->textBrowser_MoneyGeneral->setText("                             How much money would you like to ransfer and to whom?");
     ui->pushButton_insert->setText("Transfer");
     ui->lineEdit_TransferToPerson_Name->show();
-    ui->lineEdit_TransferToPerson_Surname->show();
 
      ui->stackedWidget->setCurrentIndex(4);
 
@@ -67,7 +66,6 @@ void MainWindow::on_pushButton_TransferMoney_clicked()
 void MainWindow::on_pushButton_UnbanningTheUser_clicked()
 {
     ui->lineEdit_TransferToPerson_Name->show();                 //making it possible to see some additional options
-    ui->lineEdit_TransferToPerson_Surname->show();
 
     ui->lineEdit_InsertAmount->setPlaceholderText("Which user would you like to unban?");
     ui->pushButton_Ban->setText("Unban");
@@ -85,6 +83,7 @@ void MainWindow::on_pushButton_WithdrawMoney_clicked()
 
 void MainWindow::on_pushButton_MoreOptions_clicked()
 {
+    ui->pushButton_insert->setText("Change");
     string list_of_users = "List of users:\n\n";
     for(int i = 0; i<N; i++)
     {
@@ -92,6 +91,16 @@ void MainWindow::on_pushButton_MoreOptions_clicked()
             list_of_users.append(customer[i]["name"]);
             list_of_users.append(" ");
             list_of_users.append(customer[i]["surname"]);
+            list_of_users.append("\n -> User's number: ");
+            list_of_users.append(to_string(customer[i].Return_float("customer_nr")));
+            list_of_users.append("\n -> User's bank balance: ");
+            list_of_users.append(to_string(customer[i].Return_float("bank_balance")));
+            list_of_users.append("\n -> User's loan+interest balance: ");
+            list_of_users.append(to_string(customer[i].Return_float("loanOwe")));
+            list_of_users.append("\n -> User's login: ");
+            list_of_users.append(customer[i]["login"]);
+            list_of_users.append("\n -> User's password: ");
+            list_of_users.append(customer[i]["password"]);
             list_of_users.append("\n\n");
         }
     }
